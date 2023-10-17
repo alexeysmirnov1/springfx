@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.bootstrap;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +19,7 @@ public class StageListener implements ApplicationListener<StageReadyEvent> {
 
     private final ApplicationContext applicationContext;
 
-    public StageListener(@Value("${spring.application.ui.title}") String applicationTitle, @Value("classpath:/ui.fxml") Resource resource, ApplicationContext applicationContext) {
+    public StageListener(@Value("${spring.application.ui.title}") String applicationTitle, @Value("classpath:/view/ui.fxml") Resource resource, ApplicationContext applicationContext) {
         this.applicationTitle = applicationTitle;
         this.fxml = resource;
         this.applicationContext = applicationContext;
@@ -37,6 +37,7 @@ public class StageListener implements ApplicationListener<StageReadyEvent> {
             stage.setScene(scene);
             stage.setTitle(this.applicationTitle);
             stage.show();
+            System.out.println(stage);
         } catch (IOException e) {
             e.printStackTrace();
         }

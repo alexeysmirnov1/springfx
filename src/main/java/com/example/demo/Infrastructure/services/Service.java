@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Infrastructure.services;
 
 import org.springframework.stereotype.Component;
 

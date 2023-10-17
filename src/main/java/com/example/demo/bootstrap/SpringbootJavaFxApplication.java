@@ -1,12 +1,12 @@
-package com.example.demo;
+package com.example.demo.bootstrap;
 
+import com.example.demo.DemoApplication;
 import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContextInitializer;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
 
@@ -32,6 +32,7 @@ public class SpringbootJavaFxApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        this.context.getBeanFactory().registerSingleton("primaryStage", primaryStage);
         this.context.publishEvent(new StageReadyEvent(primaryStage));
     }
 
@@ -39,15 +40,5 @@ public class SpringbootJavaFxApplication extends Application {
     public void stop() throws Exception {
         this.context.close();
         Platform.exit();
-    }
-}
-
-class StageReadyEvent extends ApplicationEvent {
-    public Stage getStage() {
-        return Stage.class.cast(getSource());
-    }
-
-    public StageReadyEvent(Stage stage) {
-        super(stage);
     }
 }
