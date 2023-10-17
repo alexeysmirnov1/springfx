@@ -1,16 +1,12 @@
 package com.example.demo.bootstrap;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import com.example.demo.UI.Scenes.Ui;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-import java.io.IOException;
-import java.net.URL;
 
 @Component
 public class StageListener implements ApplicationListener<StageReadyEvent> {
@@ -27,20 +23,9 @@ public class StageListener implements ApplicationListener<StageReadyEvent> {
 
     @Override
     public void onApplicationEvent(StageReadyEvent stageReadyEvent) {
-        try {
-            Stage stage = stageReadyEvent.getStage();
-            URL url = this.fxml.getURL();
-            FXMLLoader fxmlLoader = new FXMLLoader(url);
-            fxmlLoader.setControllerFactory(applicationContext::getBean);
-            Parent root = fxmlLoader.load();
-            Scene scene = new Scene(root, 600, 600);
-            stage.setScene(scene);
-            stage.setTitle(this.applicationTitle);
-            stage.show();
-            System.out.println(stage);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        Stage stage = stageReadyEvent.getStage();
+        stage.setScene(this.applicationContext.getBean(Ui.class).load());
+        stage.setTitle(this.applicationTitle);
+        stage.show();
     }
 }
