@@ -1,6 +1,6 @@
 package com.example.demo.bootstrap;
 
-import com.example.demo.UI.Scenes.Ui;
+import com.example.demo.ide.UI.Scenes.Ui;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;

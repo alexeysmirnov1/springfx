@@ -1,4 +1,4 @@
-package com.example.demo.UI;
+package com.example.demo.ide.UI;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

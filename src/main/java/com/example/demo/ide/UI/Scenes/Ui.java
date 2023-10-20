@@ -1,6 +1,6 @@
-package com.example.demo.UI.Scenes;
+package com.example.demo.ide.UI.Scenes;
 
-import com.example.demo.UI.Scene;
+import com.example.demo.ide.UI.Scene;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
-package com.example.demo.Infrastructure.controllers;
+package com.example.demo.ide.Infrastructure.controllers;
 
-import com.example.demo.Infrastructure.services.Service;
-import com.example.demo.UI.Stage;
+import com.example.demo.ide.Infrastructure.services.Service;
+import com.example.demo.ide.UI.Stage;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

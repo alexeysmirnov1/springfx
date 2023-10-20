@@ -1,6 +1,6 @@
-package com.example.demo.UI;
+package com.example.demo.ide.UI;
 
-import com.example.demo.UI.Scenes.Editor;
+import com.example.demo.ide.UI.Scenes.Editor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
